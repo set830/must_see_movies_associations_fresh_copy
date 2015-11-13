@@ -64,13 +64,9 @@
       </div>
 
       <!-- Label and input for director_id -->
-      <div class="form-group">
-        <label for="director_id" class="control-label">
-          Director
-        </label>
+       <%= select_tag(:director_id, options_from_collections_for_select(Director.all,:id,:name, @movie.director_id), :class=>"form-control")%>"
 
-        <input type="text" id="director_id" name="director_id" placeholder="Director" class="form-control" value="<%= @movie.director_id %>">
-      </div>
+              <a href = "/directors/new">or add a new director</a>
 
       <button class="btn btn-warning">
         Update Movie
