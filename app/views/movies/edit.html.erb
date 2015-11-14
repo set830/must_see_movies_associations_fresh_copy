@@ -64,7 +64,13 @@
       </div>
 
       <!-- Label and input for director_id -->
-       <%= select_tag(:director_id, options_from_collections_for_select(Director.all,:id,:name, @movie.director_id), :class=>"form-control")%>"
+      <div class="form-group">
+        <label for="director_id" class="control-label">
+          Name
+        </label>
+
+        <%= select_tag(:director_id, options_from_collection_for_select(Director.order("name ASC"), :id, :name, @movie.director_id), :class => "form-control") %>
+      </div>
 
               <a href = "/directors/new">or add a new director</a>
 
