@@ -21,6 +21,15 @@
       <dd> <%=Movie.where({:director_id=>@director.id}).count%>
 
       <dt>Filmograpy</dt>
+      <dd>
+        <ul>
+          <%=Movie.where({:director_id=>@director.id}).each do |movie|%>
+            <li><%=movie.title%>
+                (<%=movie.year%>)</li>
+
+          <% end %>
+        </ul>
+      </dd>
     </dl>
 
     <div class="btn-group btn-group-justified">
