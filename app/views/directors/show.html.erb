@@ -18,12 +18,12 @@
       <dd><%= @director.image_url %></dd>
 
       <dt>Movie Count</dt>
-      <dd> <%=Movie.where({:director_id=>@director.id}).count%>
+      <dd> director.movie.count%>
 
       <dt>Filmograpy</dt>
       <dd>
         <ul>
-          <%=Movie.where({:director_id=>@director.id}).each do |movie|%>
+          <%director.movie.each do |movie|%>
             <li><%=movie.title%>
                 (<%=movie.year%>)</li>
 
